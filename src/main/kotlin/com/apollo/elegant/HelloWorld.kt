@@ -1,3 +1,5 @@
+package com.apollo.elegant
+
 class HelloWorld {
 
 }
