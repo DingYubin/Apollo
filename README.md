@@ -2,5 +2,8 @@
 ## java
 > java.com.apollo.elegant
 >> experiment 实验代码
->>> plugins -> Junit Generator V2.0
+>> generic 泛型使用
 ## kotlin
+>java.com.apollo.elegant
+>> experiment 实验代码
+>> generic 泛型使用
