@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FlatMap {
+
     public static void main(String[] args) {
         List<String> teamIndia = Arrays.asList("Virat", "Dhoni", "Jadeja");
         List<String> teamAustralia = Arrays.asList("Warner", "Watson", "Smith");
