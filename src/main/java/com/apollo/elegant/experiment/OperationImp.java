@@ -72,7 +72,17 @@ public class OperationImp {
          * 类的实例方法引用
          * 使用方式：Class::method
          */
-        operationA.operate((operationA1, operationB1) -> 0);
+        operationA.operate(new OperationInt() {
+            @Override
+            public int cp(OperationImp operationA, OperationImp operationB) {
+                return operationA.operationM(operationB);
+            }
+        });
+
+        // 转换成lambda
+        operationA.operate((operationA1, operationB2) -> operationA1.operationM(operationB2));
+
+        // 转换成 instance::method (重点)
         operationA.operate(OperationImp::operationM);
     }
 
