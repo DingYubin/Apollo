@@ -9,6 +9,7 @@ public class StringGenerator {
         //Method Reference ::  --> 方法的引用
         arr.toArray(new String[0]);
         //Lazy evaluation --> 惰性计算 （函数式编程 -> lambda表达式）
-//        arr.toArray(String[]::new);
+        arr.toArray(String[]::new);
+
     }
 }
