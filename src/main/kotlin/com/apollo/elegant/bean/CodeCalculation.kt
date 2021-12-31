@@ -1,4 +1,4 @@
-package com.casstime.ec.scan.bean
+package com.apollo.elegant.bean
 
 import java.io.Serializable
 
