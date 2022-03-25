@@ -25,5 +25,9 @@ fun main() {
    }.sortedBy {
       it.time
    }.forEach(::println)
+//   val conversation = Conversation("005", "凯文", 5);
+//   list[4] = conversation
+//
+//   list.forEach(::println)
 
 }
