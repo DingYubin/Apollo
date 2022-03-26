@@ -16,7 +16,9 @@ class Pets {
 
         private val scores: MutableMap<T, Int> = mutableMapOf()
         fun addScore(t: T, score: Int = 0) {
-            if (score >= 0) scores[t] = score
+            if (score >= 0) {
+                scores[t] = score
+            }
         }
 
         fun getWinners(): MutableSet<T> {
