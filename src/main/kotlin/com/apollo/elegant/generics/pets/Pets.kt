@@ -1,9 +1,11 @@
-package com.apollo.elegant.generics
+package com.apollo.elegant.generics.pets
 
 class Pets {
     abstract class Pet(var name: String)
 
-    class Cat(name: String) : Pet(name)
+    class Cat(name: String) : Pet(name) {
+        var apple: String ?= null
+    }
 
     class Dog(name: String) : Pet(name)
 
@@ -37,6 +39,7 @@ class Pets {
      * <out T> -> <T extends Pet>
      */
     interface Retailer<out T> {
+
         fun sell() : T
     }
 
@@ -61,6 +64,20 @@ class Pets {
         }
     }
 
+    interface Voter<T> {
+        val key: Int
+        fun buy(t: T)
+    }
+
+    class CatVoter(override val key: Int) : Voter<Pet>{
+        override fun buy(t: Pet) {
+            if (t !is Cat) {
+                return
+            }
+            println("Cat name : ======== ${t.name} ， Cat apple : ${t.apple}")
+        }
+    }
+
     /**
      * 逆变：父类型代替子类型
      * 只能被用于“输入”，例如方法的参数类型
@@ -76,6 +93,12 @@ class Pets {
 }
 
 fun main() {
+//    val catVoter: Pets.Voter<Pets.Cat> = Pets.CatVoter(1)
+    val catVoter: Pets.Voter<Pets.Pet> = Pets.CatVoter(1)
+    val cat = Pets.Cat("nihao jielun")
+    cat.apple = "小苹果"
+    catVoter.buy(cat)
+
     val catFuzz = Pets.Cat("Fuzz LightYear")
     val catKatSu = Pets.Cat("KatSu")
     val fishFinny = Pets.Fish("Finny McGraw")
@@ -93,13 +116,13 @@ fun main() {
     catContest.addScore(catFuzz, 50)
     catContest.addScore(catKatSu, 45)
     val topCat = catContest.getWinners().first()
-    println("Cat contest winner is ${topCat.name}")
+//    println("Cat contest winner is ${topCat.name}")
 
     val petContest = Pets.Contest<Pets.Pet>(petVet)
     petContest.addScore(catFuzz, 50)
     petContest.addScore(fishFinny, 56)
     val topPet = petContest.getWinners().first()
-    println("Pet contest winner is ${topPet.name}")
+//    println("Pet contest winner is ${topPet.name}")
 
     val fishContest = Pets.Contest<Pets.Fish>(petVet)
 

@@ -2,6 +2,7 @@ package com.apollo.elegant.experiment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,10 +43,11 @@ public class FlatMap {
 
         // Now let's do this in Java 8 using FlatMap
         List<String> flatMapList = playersInWorldCup2016.stream()
-                .flatMap(pList -> pList.stream())
+                .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
         System.out.println("List of all Players using Java 8");
         System.out.println(flatMapList);
     }
+
 }

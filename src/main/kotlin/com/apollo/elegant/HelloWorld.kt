@@ -9,6 +9,18 @@ fun main() {
     println("i = ${0%2}")
     println("i = ${1%1}")
     println("i = ${1%2}")
+
+    val a = "22223"
+    val b = 1
+//    var rel = a.substring(b)
+
+    var jumpUrl: String
+//    if (b != -1) {
+        jumpUrl = a.substring(b)
+
+        jumpUrl = jumpUrl.replace("&jumpUrl=", "")
+//    }
+
 //    //只读
 //    val list = listOf("a", "b", "c")
 //    list.forEach { println(it) }
