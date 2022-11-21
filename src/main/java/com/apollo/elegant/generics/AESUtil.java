@@ -22,8 +22,8 @@ public class AESUtil {
         String message = "Hello, world!";
         System.out.println("Message: " + message);
         String encryptStr = encrypt(message, "1234567890abcdef", "groupBuyFromUser");
-        System.out.println("Encrypted: " + encryptStr);
-        System.out.println("Decrypted: " + decrypt(encryptStr, "1234567890abcdef", "groupBuyFromUser"));
+//        System.out.println("Encrypted: " + encryptStr);
+        System.out.println("Decrypted: " + decrypt("nJNASF5FmAOpzGLlolCOCYJCiyxrcY0Q74oYX2Bu+Tc7jGb0Pw2NKkvBGfTkVlT0", "1234567890abcdef", "groupBuyFromUser"));
         // 128位密钥 = 16 bytes Key:
 //        byte[] key = "1234567890abcdef".getBytes(StandardCharsets.UTF_8);
         // iv 变量
